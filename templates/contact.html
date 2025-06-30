@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}contact{%endblock title%}
+{% block body %}
+<div class="container-fluid my-4 px-0">
+  <img src="https://static.vecteezy.com/system/resources/previews/001/263/984/non_2x/contact-us-concept-free-photo.jpg"
+    alt="Ice Cream" style="width:100%; height:500px;">
+</div>
+<div class="container">
+  <h1 class="text-center">Contact Us</h1>
+  <form method="POST" action="/contact">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"       name="name" placeholder="Enter you'r name">
+    </div>
+    <div class="form-group">
+      <label for="name">Phone number</label>
+      <input type="phone" class="form-control" id="phone"       name="phone" placeholder="Enter yoy'r phone number">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="email" name="email"  placeholder="example@example.com">
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="desc">write here</label>
+      <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+{% endblock body %}
